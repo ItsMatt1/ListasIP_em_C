@@ -6,8 +6,10 @@
 
 int maiorValor = INT_MIN, menorValor = INT_MAX, menorValor0 = 0;
 
-int *funcaoCuboDoMenor(int a[10])
+int *funcaoCuboDoMenor(int a[])
 {
+    double *menorValor0 = &menorValor;
+
     for (int i = 0; i < 10; i++)
     {
         if (a[i] < menorValor)
@@ -16,12 +18,12 @@ int *funcaoCuboDoMenor(int a[10])
         }
     }
 
-    menorValor0 = (pow(menorValor, 3));
+    menorValor = pow(menorValor, 3);
 
     return (menorValor0);
 }
 
-int funcaoQuadradoDoMaior(int a[10])
+int funcaoQuadradoDoMaior(int a[])
 {
     for (int i = 0; i < 10; i++)
     {
@@ -34,7 +36,7 @@ int funcaoQuadradoDoMaior(int a[10])
     return (pow(maiorValor, 2));
 }
 
-int imprimirOrdemInversa(int a[10])
+int imprimirOrdemInversa(int a[])
 {
     printf("\nImpressão do vetor na ordem inversa: ");
 
@@ -44,7 +46,7 @@ int imprimirOrdemInversa(int a[10])
     }
 }
 
-int imprimirValores(int a[10])
+int imprimirValores(int a[])
 {
     int vetorImpar[10] = {0};
     int vetorPar[10] = {0};
@@ -79,7 +81,7 @@ int imprimirValores(int a[10])
     }
 }
 
-double mediaDoVetor(int a[10])
+double mediaDoVetor(int a[])
 {
     double media = 0, contadorMedia = 0, soma = 0;
 
@@ -106,7 +108,7 @@ int main()
     imprimirValores(vetorA);
     imprimirOrdemInversa(vetorA);
     printf("\nA média dos valores do vetor é: %0.2lf\n", mediaDoVetor(vetorA));
-    printf("O cubo do valor do menor elemento do vetor é: %d\n", funcaoCuboDoMenor(vetorA));
+    printf("O cubo do valor do menor elemento do vetor é: %d\n", *funcaoCuboDoMenor(vetorA));
     printf("O quadrado do valor do maior elemento do vetor é: %d ", funcaoQuadradoDoMaior(vetorA));
 
     return (0);
