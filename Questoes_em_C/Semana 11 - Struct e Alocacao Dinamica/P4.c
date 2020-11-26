@@ -22,11 +22,10 @@ typedef struct Planilha2
 
 int main()
 {
-    int N, M, i, j, w, f;
+    int N, M, i, j, w;
     Universidade Curso[30];
     Dados Aluno[50];
     char **NomeDoCurso0;
-    char **NomeDoAluno0;
 
     scanf("%d", &N);
 
@@ -47,17 +46,9 @@ int main()
 
     scanf("%d", &M);
 
-    NomeDoAluno0 = (char *)malloc(M * sizeof(char *));
-
     for (i = 0; i < M; i++)
     {
         scanf(" %[^\n]s", Aluno[i].NomeDoAluno);
-
-        for (f = 0; f < strlen(Aluno[i].NomeDoAluno + 1); f++)
-        {
-            NomeDoAluno0[f] = (char *)malloc(strlen(Aluno[f].NomeDoAluno + 1) * sizeof(char));
-            strcpy(NomeDoAluno0[f], Aluno[f].NomeDoAluno);
-        }
         scanf("%d", &Aluno[i].CodigoCursoAluno);
 
         for (j = 0; j < N; j++)
@@ -74,7 +65,7 @@ int main()
     for (i = 0; i < M; i++)
     {
         printf("Aluno(a): %s Curso: %s Num. Creditos: %d Valor Credito: %0.2lf Mensalidade: %0.2lf\n",
-               NomeDoAluno0[i], NomeDoCurso0[i], Aluno[i].CreditosAtuais, Aluno[i].ValorPorCreditoAluno, (Aluno[i].CreditosAtuais * Aluno[i].ValorPorCreditoAluno));
+               Aluno[i].NomeDoAluno, NomeDoCurso0[i], Aluno[i].CreditosAtuais, Aluno[i].ValorPorCreditoAluno, (Aluno[i].CreditosAtuais * Aluno[i].ValorPorCreditoAluno));
     }
 
     return (0);

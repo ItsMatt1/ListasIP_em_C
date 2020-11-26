@@ -1,0 +1,2 @@
+Outro exemplo de utilizaçao da funçao fgets().
+eai
