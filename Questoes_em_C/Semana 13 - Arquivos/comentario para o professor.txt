@@ -1,4 +1,0 @@
-Professor os três exercicios funcionam perfeitamente exceto pelo fato de lerem apenas uma linha,
-eu pesquisei e li muito e não entendi certinho como funciona para ler mais de uma linha de um arquivo de texto,
-unica solução foi usar muitos fgets para ler cada uma das três linhas, mas não achei prático, assim, enviei os exercicios com apenas uma linha para cada arquivo
-e suas entradas e saidas funcionam.
